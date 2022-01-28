@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="java-web-begin:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/java_web_begin_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="java-web-begin/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="java-web-begin" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="servlet-api" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../JAVA/Java_install/apache-tomcat-8.0.50/lib/servlet-api.jar" />
+          <element id="library" level="project" name="lib_thymleaf" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Jdbc_1/lib/mysql-connector-java-8.0.11.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
