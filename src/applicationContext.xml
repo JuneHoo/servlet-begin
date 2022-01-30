@@ -1,0 +1,13 @@
+<?xml version="1.0" encodeing="utf-8"?>
+
+
+<!--html：超文本标记语言-->
+<!--xml：可扩展的标记语言-->
+<!---->
+<!--htm是xml的子集-->
+<!--xml包含三部分：xml声名，DTD文档类型定义，XML正文-->
+<beans>
+<!--    这个bean标签作用：设计的名字对应的是fruit 那么就要FruitController处理-->
+    <bean id="fruit" class="com.atguigu.fruit.controllers.FruitController"></bean>
+
+</beans>

@@ -1,4 +1,4 @@
-package com.atguigu.fruit.servlets;
+package com.atguigu.fruit.controllers;
 
 import com.atguigu.fruit.dao.FruitDAO;
 import com.atguigu.fruit.dao.impl.FruitDAOImpl;
@@ -6,6 +6,8 @@ import com.atguigu.fruit.pojo.Fruit;
 import com.atguigu.myssm.myspringmvc.ViewBaseServlet;
 import com.atguigu.myssm.util.StringUtil;
 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,44 +15,47 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.List;
 
-@WebServlet("/fruit.do")
-public class FruitServlet extends ViewBaseServlet {
+//@WebServlet("/fruit.do")
+public class FruitController extends ViewBaseServlet {
     FruitDAO fruitDAO = new FruitDAOImpl();
+    private ServletContext servletContext ;
 
-    @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        req.setCharacterEncoding("UTF-8");
-
-        String operate = req.getParameter("operate");
-        if (StringUtil.isEmpty(operate)) {
-            operate = "index";
-
-        }
-        switch (operate) {
-            case "index":
-                index(req, resp);
-                break;
-            case "add":
-                add(req, resp);
-                break;
-            case "del":
-                del(req, resp);
-                break;
-            case "edit":
-                edit(req, resp);
-                break;
-            case "update":
-                update(req, resp);
-                break;
-            default:
-                throw new RuntimeException("Wrong operation！");
-//                break;
-        }
-
+    public void setServletContext(ServletContext servletContext) throws ServletException {
+        this.servletContext = servletContext;
+        super.init(servletContext);
     }
+
+//    @Override
+//    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//
+//        req.setCharacterEncoding("UTF-8");
+//
+////        String operate = req.getParameter("operate");
+////        if (StringUtil.isEmpty(operate)) {
+////            operate = "index";
+////        }
+////        // 获取当前类中的所有方法
+////        Method[] Methods = this.getClass().getDeclaredMethods();
+////        for (Method m : Methods) {
+////            String methodName = m.getName();
+////            if (operate.equals(methodName)) {
+////                try {
+////                    m.invoke(this, req, resp);
+////                } catch (IllegalAccessException e) {
+////                    e.printStackTrace();
+////                } catch (InvocationTargetException e) {
+////                    e.printStackTrace();
+////                }
+////            }
+////        }
+////        throw new RuntimeException("Wrong operation!");
+//    }
+
+
 
     private void edit(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String fidStr = req.getParameter("fid");
