@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface FruitDAO {
     //查询库存列表
-    List<Fruit> getFruitList();
+    List<Fruit> getFruitList(String keyword, Integer pageNo);
 
     //新增库存
     boolean addFruit(Fruit fruit);
@@ -19,4 +19,10 @@ public interface FruitDAO {
 
     //删除特定库存记录
     boolean delFruit(String fname);
+    boolean delFruit(Integer fid);
+
+    Fruit getFruitByFid(Integer fid);
+
+    // 查询库存总条数
+    int getFruitCount(String keyword);
 }

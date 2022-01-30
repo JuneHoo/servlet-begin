@@ -11,10 +11,10 @@
         <param-name>view-suffix</param-name>
         <param-value>.html</param-value>
     </context-param>
-    <servlet>
-        <servlet-name>addServlet</servlet-name>
-        <servlet-class>com.atguigu.demo.AddServlet</servlet-class>
-    </servlet>
+<!--    <servlet>-->
+<!--        <servlet-name>addServlet</servlet-name>-->
+<!--        <servlet-class>com.atguigu.demo.AddServlet</servlet-class>-->
+<!--    </servlet>-->
     <servlet>
         <servlet-name>demo01Servlet</servlet-name>
         <servlet-class>com.atguigu.demo.Demo01Servlet</servlet-class>
@@ -43,10 +43,10 @@
         <servlet-name>demo07Servlet</servlet-name>
         <servlet-class>com.atguigu.demo.Demo07Servlet</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>addServlet</servlet-name>
-        <url-pattern>/add</url-pattern>
-    </servlet-mapping>
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>addServlet</servlet-name>-->
+<!--        <url-pattern>/add</url-pattern>-->
+<!--    </servlet-mapping>-->
     <servlet-mapping>
         <servlet-name>demo01Servlet</servlet-name>
         <url-pattern>/demo01</url-pattern>
